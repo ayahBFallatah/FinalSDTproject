@@ -45,7 +45,11 @@ search_patient() {
     echo "------------------"
     read -p "Enter patient name to search: " search_name
     find_in_file "patients.txt" "$search_name"
+if ! find_in_file "patients.txt" "$search_name"; then
+        echo "Search failed. Patient not found."
+    fi
 }
+
 
 # Function to manage doctor-patient daily planner
 doctor_daily_planner() {
